@@ -49,8 +49,8 @@ public class CountingIndexer extends Configured implements Tool {
         job.setCombinerClass(IntSumReducer.class);
         job.setReducerClass(IntSumReducer.class);
 
-        FileInputFormat.addInputPaths(job, args[1]);
-        Path outputPathTemp = new Path(args[2] +"Temp");
+        FileInputFormat.addInputPaths(job, args[0]);
+        Path outputPathTemp = new Path(args[1] +"Temp");
         FileOutputFormat.setOutputPath(job, outputPathTemp);
 
         job.waitForCompletion(true);
@@ -77,7 +77,7 @@ public class CountingIndexer extends Configured implements Tool {
         job2.setOutputValueClass(StringIntPair.class);
 
         FileInputFormat.addInputPath(job2, outputPathTemp);
-        FileOutputFormat.setOutputPath(job2, new Path(args[2]));
+        FileOutputFormat.setOutputPath(job2, new Path(args[1]));
 
         return job2.waitForCompletion(true) ? 0 : 1;
     }
