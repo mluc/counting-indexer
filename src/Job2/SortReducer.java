@@ -18,6 +18,7 @@ public class SortReducer extends Reducer<StringStringPair, StringIntPair, Text, 
         context.write(word, null);
 
         for(StringIntPair value: values) {
+            //Ex: value: wordToFileName is 'abode-chap14', count is 2
             String[] word_FileName = value.wordToFileName.split("-");
             String fileName = word_FileName[1];
 

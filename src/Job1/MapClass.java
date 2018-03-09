@@ -7,6 +7,16 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
+/*
+Intermediate result has the following format:
+a-chap01	21
+a-chap02	10
+...
+ablution-chap25	1
+abode-chap14	2
+abode-chap16	1
+...
+ */
 public class MapClass extends Mapper<WordOffset, Text, Text, IntWritable> {
     private final static IntWritable one = new IntWritable(1);
     private Text word = new Text();
