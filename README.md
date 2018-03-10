@@ -1,4 +1,4 @@
-# Counting Indexer (EE 382N: Distributed Systems - Homework 3)
+# Counting Indexer (EE 382N: Homework 3)
 In this problem, you will implement a counting indexer using Hadoop, a programming
 model and software framework for developing applications that concurrently process large scale data
 (Big Data) on distributed systems. The indexer you develop has to identify the file and calculate
